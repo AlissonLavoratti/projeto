@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Main tec</title>
+    <style>
+    #main{
+      background-color: #2c2c2c;
+    }
+    .navbarone {
+      background-color: #2c2c2c;/*cor do fundo*/
+      padding: 1rem;/*preenchimento do tamanho da font (1rem) */
+      position: sticky;/*mantem a posicao do nav fixo na pagina*/
+      top: 0;/*altura totalmente em cima da pagina*/
+      box-shadow: 10px 0px 10px #2c2c2c;/*sombra*/
+      z-index: 99;/*PARA SOBREPOSICAO | EIXOS X, Y e Z, sendo que Z é profundidade, dando aspecto em 3D*/
+    }
+    .navbartwo {
+      background-color: #2c2c2c;/*cor do fundo*/
+      padding: 1rem;/*preenchimento do tamanho da font (1rem) */
+      position: sticky;/*mantem a posicao do nav fixo na pagina*/
+      top: 0;/*altura totalmente em cima da pagina*/
+      box-shadow: 10px 0px 10px #2c2c2c;/*sombra*/
+      z-index: 99;/*PARA SOBREPOSICAO | EIXOS X, Y e Z, sendo que Z é profundidade, dando aspecto em 3D*/
+    }
+    .carroceu{
+      top: 0;/*altura totalmente em cima da pagina*/
+      box-shadow: 10px 0px 10px #2c2c2c;/*sombra*/
+      z-index: 98;/*PARA SOBREPOSICAO | EIXOS X, Y e Z, sendo que Z é profundidade, dando aspecto em 3D*/
+    }
+    .margin{
+      margin-top: 80px;        
+    }
+    .margincard{
+      margin-bottom: 50px;
+    }
+    #priv{
+      color: rgb(214, 214, 214);
+    }
+    .divmar{
+    margin-top: 40px;
+    margin-bottom: 100px;
+    margin-left: 50px;      
+    }
+    .smallinput {
+      width: 50px;
+      height: 5px;
+    }
+    .butone{
+      margin-left: 90px;
+    }
+    .inp{
+      margin-right: 50px;
+      margin-left: 50px;
+    }
+    .but{
+      margin-left: 50px;
+    }
+    .lab{
+      margin-right: 15px;
+    }
+    @media (max-width: 768px){
+      #divlab{
+        margin-bottom: 20px;
+        
+      }
+      #bcadcli{
+        margin-left: 145px;        
+      }
+      #table{
+        margin-left: 20px;        
+      }
+      #pesq{
+        margin-right: 15px;
+      }
+      
+    }    
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbarone navbar-expand-lg bg-body-tertiary ">
+        <div class="container-fluid row">
+          <a href="index.html" class="text-center">
+            <img src="/img/logo.png" alt="Logo">
+          </a>
+        </div>
+      </nav>
+    
+      <nav class="navbartwo navbar-expand-lg bg-body-tertiary shadow row">
+        <div class="container-fluid text-center">
+          <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center" style="margin:auto;"> <!-- Adicionado estilo inline -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="clientes.html">Clientes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+              </li>
+            </ul>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>        
+        <section>
+          <div class="row justify-content-center align-items-center divmar">
+            <form action="/processar" method="POST" class="col-md-6">
+              <div class="input-group" id="divlab">
+                <label for="nome" class="form-label lab">Produto:</label>
+                <input type="text" id="nome" class="form-control inp" name="Pesquisar">                      
+                <button type="submit" id="pesq" class="btn btn-primary but rounded-start" onclick="exibirMensagem()">Pesquisar</button>
+              </div>
+            </form>
+            <div class="col-md-6 " id="bcadcli">
+                <a href="/cadastraProduto.html" class="btn btn-success" >Cadastrar produto</a>                    
+            </div>
+          </div>
+          <div class="row justify-content-around">
+            <div  class="col-md-9">
+              <table id="table" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Nome do produto</th>
+                    <th>Descrição do produto</th>
+                    <th>Preço do produto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-active">
+                    <th scope="row">iPhone 13 Pro Max</th><td colspan="1" class="table-active">6,7 pol. ou 6,1 pol. Tela Super Retina XDR</td><td>8.499,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">iPhone 13 Pro</th><td colspan="1" class="table-active">6,7 pol. ou 6,1 pol. Tela Super Retina XDR</td><td>4,499,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">iPhone 13</th><td colspan="1" class="table-active">iPhone 13 Apple 128GB Meia-noite, Tela de 6,1, 5G</td><td>4.299,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">iPhone 12 Mini</th><td colspan="1" class="table-active">Chip A14 Bionic, novo design, Ceramic Shield, tela OLED</td><td>4.299,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Samsung Galaxy S21 Ultra</th><td colspan="1" class="table-active">Velocidade de processador. 2.9GHz, 2.8GHz, 2.2GHz ; Tipo de processador.</td><td>4.159,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Samsung Galaxy S21+</th><td colspan="1" class="table-active">128Gb Prata 5G - 8Gb Ram Tela 6,7 Câm</td><td>1.579,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Samsung Galaxy S21</th><td colspan="1" class="table-active">5G, 128GB, 6GB RAM, Processador Octa Core última geração, Bateria de 4500mAh</td><td>1.766,99</td>
+                  </tr>
+                  <tr class="table-active">
+                    <th scope="row">Samsung Galaxy Z Fold 3</th><td colspan="1" class="table-active">512 Gb Preto 7.6 5G. R$ 9.257,94. 12%. R$ 8.146,98</td><td>8.199,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Google Pixel 6 Pro</th><td colspan="1" class="table-active">128GB Sorta Sunny ; Cor: Sorta Sunny; Tamanho: 128 GB;</td><td>5.599,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Google Pixel 4a 5G</th><td colspan="1" class="table-active">64GB 128GB - Desbloqueado Verizon AT&T T-Mobile.</td><td>2.549,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Xiaomi Mi 11 Ultra</th><td colspan="1" class="table-active">Dual SIM 512 GB ceramic white 12 GB RAM</td><td>5.199,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Xiaomi Mi 10 Pro</th><td colspan="1" class="table-active">128GB, 6GB 6,67", Snapdragon 732G, 5020mAh Battery, Global 4G LTE</td><td>1.699,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Xiaomi Poco X3</th><td colspan="1" class="table-active">bateria de 5160mAh. Processador Qualcomm Snapdragon 732G, 1.8GHz, 2.3GHz</td><td>1.799,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Huawei P40 Pro</th><td colspan="1" class="table-active"> 512gb 8gb Ram 5g 100x Zoom - Exclusivo!</td><td>4.449,99</td>
+                  </tr>
+                    <th scope="row">Huawei P30 Pro</th><td colspan="1" class="table-active">Tela OLED de 6.47", e resolução Full HD+</td><td>3.799,99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Sony Xperia 1 III</th><td colspan="1" class="table-active">Display. 6.5" 1644 x 3840 pixel ; Foto. 12 Mp + 12 Mp + 12 Mp</td><td>3.459,99</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+    </main>
+    <footer class="mt-5 navbarone">
+        <div class="container d-flex justify-content-around">
+            <p id="priv">Criado por Alisson Lavoratti da Conceição, 2023.</p>
+            <a href="">Privacidade</a><a href="Termos"></a>
+            <a href="">Termos de uso</a><a href="Termos"></a>
+            <p class="float-right"><a href="#">Voltar ao topo</a></p>
+        </div>
+    </footer>    
+    <script>
+        function exibirMensagem() {
+          alert("Produto não localizado");
+          history.back();
+        }
+    </script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>
